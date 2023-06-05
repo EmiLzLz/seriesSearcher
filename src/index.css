@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *LOADER STYLES */
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* *MAIN STYLES */
+* {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{ width: 5px;}
+
+::-webkit-scrollbar-track{ background-color: transparent; }
+
+::-webkit-scrollbar-thumb{ background-color: #fefefefe; border-radius: 20px;}
+
+#root {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.about-app,
+.form {
+  animation: topToBottom 0.9s ease-in-out;
+}
+
+.about-app h1 {
+  animation: animateText 9s ease-in infinite;
+}
+
+.background {
+  filter: opacity(20%);
+}
+
+body {
+  height: 100%;
+  background-color: #000000;
+}
+
+.error-container{
+  background-image: url("../src/assets/errorImg.png");
+  background-size:100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.img-container img {
+  animation: animateImg 0.7s 1s ease-out forwards;
+}
+
+.main-container {
+  overflow: hidden;
+}
+
+.main-info,
+.add-info {
+  animation: bottomToTop 0.9s ease-in-out;
+}
+
+#searchBtn {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: black;
+  transition: all 0.2s ease-out;
+}
+
+#searchBtn:hover {
+  -webkit-box-shadow: 0px 0px 34px -1px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 34px -1px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 34px -1px rgba(255, 255, 255, 1);
+}
+
+#searchBtn:active {
+  scale: 0.95;
+}
+
+@keyframes topToBottom {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bottomToTop {
+  from {
+    transform: translateY(700px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animateImg {
+  from {
+    transform: translateY(0px);
+    box-shadow: none;
+  }
+  to {
+    transform: translateY(10px);
+    -webkit-box-shadow: -13px 14px 0px 0px rgba(166, 87, 174, 1);
+    -moz-box-shadow: -13px 14px 0px 0px rgba(166, 87, 174, 1);
+    box-shadow: -13px 14px 0px 0px rgba(166, 87, 174, 1);
+  }
+}
+
+@keyframes animateText {
+  0% {
+    color: #a657ae;
+  }
+  20% {
+    color: #a657ae;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: #a657ae;
+  }
+  80% {
+    color: white;
+  }
+  100% {
+    color: #a657ae;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  * {
+    text-align: center;
+  }
+
+  .add-info {
+    height: 350px !important;
+    overflow-y: scroll;
+  }
+
+  footer h6 {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .error-container{ background-size: cover; }
+  #searchBtn {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 275px) {
+  *{ word-break: break-all; }
+
+  .about-app { padding: 0px 8px; }
+
+  .title svg { display: none !important; }
+
+  .title h3{ font-size: 1.80rem;}
+
+  .img-container{ padding-top: 10px;}
+
+  .img-container img { width: 100% !important; animation: none; }
+
+  .main-info .facts .fact-group,
+  footer {
+    flex-direction: column;
+  }
+}
