@@ -15,6 +15,11 @@ a React project that allows users to access information on numerous series, incl
 ![second view](https://i.ibb.co/Fm12X7v/series-Searcher-view2.png)
 
 
+## Demo
+
+https://emilzlz.github.io/seriesSearcher/
+
+
 ## Appendix
 
 [TVMAZE](https://www.tvmaze.com/api) is the project's chosen API.
