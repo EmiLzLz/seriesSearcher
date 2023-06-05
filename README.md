@@ -1,11 +1,11 @@
 # TV Series searcher
 
-a React project that allows users to access information on numerous series, including summaries, statuses, ratings, networks, and more.
+A React project that allows users to access information on numerous series, including summaries, statuses, ratings, networks, and more.
 
 
 ## Tech Stack
 
-**Client:** React, TailwindCSS Vite
+**Client:** React, TailwindCSS, Vite
 
 
 
